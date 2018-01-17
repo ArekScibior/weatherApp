@@ -1,0 +1,55 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 info">
+            <label class="control-label" ng-show="showResult">Pogoda teraz: {{name}}, {{country}}, {{time}}</label>
+        </div>
+        <div class="col-md-4">
+            <form ng-submit="">
+                <div class="input-group ">
+                    <input class="form-control input-sm" type="text" placeholder="Wpisz miejscowość" ng-model="city" auto-focus> 
+                    <span class="input-group-btn">
+                        <button type="button" ng-click="search()" class="btn btn-primary btn-sm">Szukaj</button>
+                    </span>
+                </div><!-- /input-group -->
+            </form>
+        </div><!-- /col-md-4 -->
+    </div>
+    <div class="row text-center results uppper">
+        <h2 class="text" ng-show="showAlert">Niestety nie znaleźliśmy podanej miejscowości... <br>
+            Spróbuj ponownie lub skorzystaj z geolokalizacji.
+        </h2>
+    </div>
+    <div class="row text-center results">
+        <button type="button" ng-show="showGeo" class="btn btn-outline-success">Użyj Geolokalizacji</button>
+    </div>
+    <div class="row text-center results">
+        <div class="col-md-12">
+            <div class="col-md-1 pic"></div>
+            <div class="col-md-5 pic">
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <h2 ng-show="showResult">Wiatr: {{wind}} km/h</h2>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <h2 ng-show="showResult">Ciśnienie: {{pressure}} hPa</h2>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <h2 ng-show="showResult">Zachmurzenie: {{cloud}}%</h2>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="pic" class="col-md-2 tem-col pic">
+                <h1 class="temp">{{temp}}°C</h1>
+            </div>
+            <div class="col-md-1 pic"></div>
+            <div class="col-md-3 pic fot">
+                <i ng-show="pic" class="wi"></i>
+                <!-- <img ng-show="pic" ng-src={{imgSrc}} alt=""> -->
+            </div>
+        </div>
+    </div>
+</div>

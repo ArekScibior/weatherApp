@@ -47,7 +47,7 @@ body {
 }
 
 .btn-outline-success:hover {
-    background-color: blue;
+    background-color: #28a745;
     border-color: #fff;
     color: #fff;
 }
@@ -75,4 +75,11 @@ img {
 .wi {
     float: right;
     margin-top: 23px;
+}
+.text-success {
+    color: #28a745;
+}
+
+.text-error {
+    color: #c40707;
 }

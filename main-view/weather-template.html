@@ -1,23 +1,23 @@
 <div class="container-fluid">
     <div class="row">
-        <div ng-show="showResult" class="col-md-4 info">
+        <div ng-if="showResult" class="col-md-4 info slide">
             <label class="control-label">Pogoda teraz: {{name}}, {{country}}, {{time}}</label>
         </div>
         <div class="col-md-4">
-            <form ng-submit="">
+            <form ng-submit="search(city)">
                 <div class="input-group ">
                     <input class="form-control input-sm" type="text" placeholder="Wpisz miejscowość" ng-model="city" auto-focus> 
                     <span class="input-group-btn">
-                        <button type="button" ng-click="search(city)" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                        <button type="button" ng-click="search(city)" class="btn btn-primary btn-sm">Szukaj &nbsp<span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                     </span>
                 </div><!-- /input-group -->
             </form>
         </div><!-- /col-md-4 -->
     </div>
-    <div ng-show="showResult" class="row text-center results uppper">
+    <div ng-if="showResult" class="row text-center results uppper slide">
         <h2 class="text-success">Gratulacje, udało się wyszukać podaną miejscowość!</h2>
     </div>
-    <div ng-show="showResult" class="row text-center results">
+    <div ng-if="showResult" class="row text-center results slide">
         <div class="col-md-12">
             <div class="col-md-1 pic"></div>
             <div class="col-md-5 pic">

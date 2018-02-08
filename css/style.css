@@ -7,7 +7,7 @@
 
 body {
     height: 100vh;
-    background-color: #F2F2F2;
+    background-color: #8FC6E7;
     font-size: 90px;
 }
 
@@ -83,3 +83,29 @@ img {
 .text-error {
     color: #c40707;
 }
+
+.slide {
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 20px);
+  }
+  .slide.ng-enter,
+  .slide.ng-leave {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+  .slide.ng-enter {
+    left: 100%;
+  }
+  .slide.ng-enter-active {
+    left: 0;
+  }
+  .slide.ng-leave {
+    left: 0;
+  }
+  .slide.ng-leave-active {
+    left: -100%;
+  }

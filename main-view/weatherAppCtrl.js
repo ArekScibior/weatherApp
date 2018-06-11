@@ -9,7 +9,7 @@ app.controller("weatherCtrl", ["$uibModal", "$scope", "$http", "$timeout", "$rou
 
     $scope.search = function(city){
         dataProvider.getResults(city).then(function success(response) {
-            var icon = document.querySelector('.icon')
+            var icon = document.querySelector('.wi')
             $scope.showResult = true;
             //info about weather
             $scope.temp = response.data.current.temp_c

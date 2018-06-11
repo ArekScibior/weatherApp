@@ -1,4 +1,6 @@
 app.controller("weatherCtrl", ["$uibModal", "$scope", "$http", "$timeout", "$routeParams", "$location","growl", "utils", "dataProvider",function($uibModal, $scope, $http, $timeout, $routeParams, $location, growl, utils, dataProvider) {
+    $('body').css("background", "url('../img/Sky.jpg')")
+    $('body').css("background-size", "cover")
     $scope.showResult = false;
 
     var goError = function() {

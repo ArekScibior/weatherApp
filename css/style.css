@@ -7,7 +7,8 @@
 
 body {
     height: 100vh;
-    background-color: #8FC6E7;
+    background: url('../img/Sky.jpg');
+    background-size: cover;
     font-size: 90px;
 }
 

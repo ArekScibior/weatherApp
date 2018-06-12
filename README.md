@@ -28,9 +28,6 @@ Może to być zwykły node'owy 'http-server'.
 -uruchom na stronie adres z serwera lokalnego.
 ```
 
-## Możesz obejrzeć dany projekt przechodząc do strony: https://arekscibior.github.io/weatherApp/
-
-
 ## Autor:
 Arkadiusz Ścibior
 
@@ -61,9 +58,6 @@ Data tworzenia projektu: 10.01.2018
 -run local server.
 -run in browser address from local server.
 ```
-
-## View the project online: https://arekscibior.github.io/weatherApp/
-
 
 ## Author:
 Arkadiusz Ścibior

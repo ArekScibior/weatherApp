@@ -2,7 +2,7 @@ app.controller("weatherCtrl", ["$uibModal", "$scope", "$http", "$timeout", "$rou
     "dataProvider", "spinner", function($uibModal, $scope, $http, $timeout, $routeParams, $location,
     growl, utils, dataProvider, spinner) {
     spinner.hide();
-    $('body').css("background", "url('../img/Sky.jpg')")
+    $('body').css("background", "url('../img/desktop.jpg')")
     $('body').css("background-size", "cover")
 
     $scope.spinner = spinner.object;

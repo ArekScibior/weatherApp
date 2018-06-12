@@ -1,6 +1,11 @@
-app.controller("weatherCtrl", ["$uibModal", "$scope", "$http", "$timeout", "$routeParams", "$location","growl", "utils", "dataProvider",function($uibModal, $scope, $http, $timeout, $routeParams, $location, growl, utils, dataProvider) {
+app.controller("weatherCtrl", ["$uibModal", "$scope", "$http", "$timeout", "$routeParams", "$location","growl", "utils",
+    "dataProvider", "spinner", function($uibModal, $scope, $http, $timeout, $routeParams, $location,
+    growl, utils, dataProvider, spinner) {
+    spinner.hide();
     $('body').css("background", "url('../img/Sky.jpg')")
     $('body').css("background-size", "cover")
+
+    $scope.spinner = spinner.object;
     $scope.showResult = false;
 
     var goError = function() {
@@ -8,9 +13,11 @@ app.controller("weatherCtrl", ["$uibModal", "$scope", "$http", "$timeout", "$rou
     }
 
     $scope.search = function(city){
+        spinner.show();
         dataProvider.getResults(city).then(function success(response) {
             var icon = document.querySelector('.wi')
             $scope.showResult = true;
+
             //info about weather
             $scope.temp = response.data.current.temp_c
             $scope.wind = response.data.current.wind_kph
@@ -21,7 +28,7 @@ app.controller("weatherCtrl", ["$uibModal", "$scope", "$http", "$timeout", "$rou
             $scope.name = response.data.location.name
             $scope.country = response.data.location.country
             $scope.time = response.data.location.localtime
-            
+            spinner.hide();
             if($scope.cloud <= 0 && $scope.cloud <= 15) {
                 icon.className = ""
                 icon.classList.add("wi")
@@ -43,8 +50,10 @@ app.controller("weatherCtrl", ["$uibModal", "$scope", "$http", "$timeout", "$rou
                 icon.classList.add("wi")
                 icon.classList.add("wi-cloudy")
             }
+
         }, function error(response){
             goError();
+            spinner.hide();
         });
     }
 

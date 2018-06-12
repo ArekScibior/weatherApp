@@ -20,17 +20,24 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/spin.js/spin.js"></script>
+    <script src="bower_components/angular-spinner/angular-spinner.js"></script>
     <script src="app.js"></script>
     <script src="js/services/dataProvider.js"></script>
     <script src="js/services/utils.js"></script>
+    <script src="js/services/spinner.js"></script>
+    <script src="js/spinner-controller.js"></script>
     <script src="main-view/weatherAppCtrl.js"></script>
     <script src="error-view/errorCtrl.js"></script>
     <script src="app.config.js"></script>
 
     <title>Check weather</title>
 </head>
-<body ng-app="app">
-        <div data-ng-view class="" style="overflow-x: hidden; overflow-y: hidden"></div>            
+<body ng-app="app" ng-controller="spinnerController">
+    <div class="spinner-pane" ng-if="spinner.counter">
+        <div class="spinner-text">Proszę czekać...</div>
+        <span us-spinner></span>
     </div>
+    <div data-ng-view class="" style="overflow-x: hidden; overflow-y: hidden"></div>            
 </body>
 </html>

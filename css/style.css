@@ -110,3 +110,19 @@ img {
   .slide.ng-leave-active {
     left: -100%;
   }
+
+  .spinner-pane {
+    position: fixed;
+    width: 100%;
+    height: calc(100% + 20px);
+    top: -20px;
+    z-index: 10000000;
+    background-color: rgba(255, 255, 255, 0.78);
+  }
+  .spinner-text {
+    position: fixed;
+    top: 50%;
+    font-size: large;
+    left: calc( 50% + 30px );
+  }
+  
